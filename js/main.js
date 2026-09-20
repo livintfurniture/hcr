@@ -177,7 +177,6 @@
       const select = form.querySelector("[data-trip-select]");
       if (!select) return;
       select.add(new Option("Choose your trip", "", true, true));
-      select.options[0].disabled = true;
       TRIPS.forEach(([value, label]) => select.add(new Option(label, value)));
       const go = () => {
         if (!select.value) {
