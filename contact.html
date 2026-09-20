@@ -8,21 +8,21 @@
   <meta name="keywords" content="Contact Cab Service Hyderabad, Cab Service Phone Number, Hyderabad Taxi Contact" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#1E3A8A" />
-  <link rel="canonical" href="https://www.worldtoursandtravels.in/contact.html" />
+  <link rel="canonical" href="https://www.hyderabadcabrentals.in/contact.html" />
   <meta name="google-site-verification" content="PASTE-YOUR-GOOGLE-SITE-VERIFICATION-CODE-HERE" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="HCR Hyderabad Cab Rentals" />
   <meta property="og:title" content="Contact Us | HCR Hyderabad Cab Rentals" />
   <meta property="og:description" content="Call, WhatsApp, or visit our Hyderabad office. Available 24×7 for cab and taxi enquiries." />
-  <meta property="og:image" content="https://www.worldtoursandtravels.in/images/og-cover.png" />
-  <meta property="og:url" content="https://www.worldtoursandtravels.in/contact.html" />
+  <meta property="og:image" content="https://www.hyderabadcabrentals.in/images/og-cover.png" />
+  <meta property="og:url" content="https://www.hyderabadcabrentals.in/contact.html" />
   <meta property="og:locale" content="en_IN" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Contact Us | HCR Hyderabad Cab Rentals" />
   <meta name="twitter:description" content="Call, WhatsApp, or visit our Hyderabad office. Available 24×7." />
-  <meta name="twitter:image" content="https://www.worldtoursandtravels.in/images/og-cover.png" />
+  <meta name="twitter:image" content="https://www.hyderabadcabrentals.in/images/og-cover.png" />
 
   <link rel="icon" href="favicon/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
@@ -41,8 +41,8 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.worldtoursandtravels.in/" },
-      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.worldtoursandtravels.in/contact.html" }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hyderabadcabrentals.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.hyderabadcabrentals.in/contact.html" }
     ]
   }
   </script>
@@ -65,26 +65,41 @@
   <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[110] focus:bg-secondary focus:text-primary focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">Skip to main content</a>
 
   <header id="site-navbar" class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md shadow-soft">
-    <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16" aria-label="Primary">
+    <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16" aria-label="Primary">
       <a href="index.html" class="flex-shrink-0" aria-label="HCR Hyderabad Cab Rentals — Home">
         <img src="images/logo-hcr-web.png" data-cfg-src="logo" alt="HCR Hyderabad Cab Rentals logo" class="h-11 sm:h-12 w-auto rounded-lg" width="300" height="200" />
       </a>
-      <ul class="hidden lg:flex items-center gap-7">
+      <ul class="hidden lg:flex items-center gap-7 ml-auto">
         <li><a href="index.html" class="nav-link scrolled">Home</a></li>
         <li><a href="about.html" class="nav-link scrolled">About</a></li>
         <li><a href="services.html" class="nav-link scrolled">Services</a></li>
         <li><a href="fleet.html" class="nav-link scrolled">Fleet</a></li>
+        <li><a href="gallery.html" class="nav-link scrolled">Gallery</a></li>
       </ul>
+      <div class="hidden lg:flex items-center gap-4 ml-8">
+        <form data-trip-search role="search" aria-label="Find a cab for your trip" class="hidden lg:flex items-center gap-1 rounded-full bg-white shadow-soft border border-slate-200 pl-4 pr-1 py-1">
+        <label for="trip-select-d" class="sr-only">Choose your trip</label>
+        <select id="trip-select-d" data-trip-select class="bg-transparent text-sm font-medium text-primary focus:outline-none w-36 py-1 cursor-pointer"></select>
+        <button type="submit" aria-label="Search cabs for this trip" class="w-8 h-8 rounded-full bg-secondary text-primary flex items-center justify-center hover:bg-secondary-600 transition-colors"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m20 20-3.5-3.5"/></svg></button>
+      </form>
+      </div>
+
       <button id="mobile-menu-btn" class="lg:hidden text-primary p-2 rounded-lg" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </nav>
     <div id="mobile-menu" class="mobile-menu lg:hidden fixed inset-x-0 top-16 bottom-0 bg-white overflow-y-auto">
+      <form data-trip-search role="search" aria-label="Find a cab for your trip" class="mx-6 mt-4 flex items-center gap-2 rounded-full border border-slate-200 bg-surface pl-4 pr-1 py-1">
+        <label for="trip-select-m" class="sr-only">Choose your trip</label>
+        <select id="trip-select-m" data-trip-select class="flex-1 min-w-0 bg-transparent text-sm font-medium text-primary focus:outline-none py-2"></select>
+        <button type="submit" aria-label="Search cabs for this trip" class="w-9 h-9 flex-shrink-0 rounded-full bg-secondary text-primary flex items-center justify-center"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m20 20-3.5-3.5"/></svg></button>
+      </form>
       <ul class="flex flex-col divide-y divide-slate-100 px-6">
         <li><a href="index.html" class="block py-4 font-medium text-primary">Home</a></li>
         <li><a href="about.html" class="block py-4 font-medium text-primary">About</a></li>
         <li><a href="services.html" class="block py-4 font-medium text-primary">Services</a></li>
         <li><a href="fleet.html" class="block py-4 font-medium text-primary">Fleet</a></li>
+        <li><a href="gallery.html" class="block py-4 font-medium text-primary">Gallery</a></li>
       </ul>
       <div class="px-6 pt-2 pb-8 flex flex-col gap-3">
         <a href="#" data-cfg-href="whatsapp" data-cfg-message="Hi! I'd like to get in touch." target="_blank" rel="noopener" class="btn-whatsapp w-full">WhatsApp</a>
@@ -120,7 +135,7 @@
           <div class="reveal animate-delay-200 card p-6 text-center">
             <div class="mx-auto w-14 h-14 rounded-full bg-secondary-50 text-secondary-600 flex items-center justify-center mb-4"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg></div>
             <h3 class="font-semibold">Email</h3>
-            <a href="mailto:" data-cfg-href="mail" class="block mt-1 text-slate-600 hover:text-secondary-600 break-all" data-cfg="email">info@worldstoursandtravels.com</a>
+            <a href="mailto:" data-cfg-href="mail" class="block mt-1 text-slate-600 hover:text-secondary-600 break-all" data-cfg="email">info@hyderabadcabrentals.com</a>
           </div>
           <div class="reveal animate-delay-300 card p-6 text-center">
             <div class="mx-auto w-14 h-14 rounded-full bg-secondary-50 text-secondary-600 flex items-center justify-center mb-4"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
@@ -140,8 +155,8 @@
                 <span class="w-10 h-10 rounded-lg bg-secondary-50 text-secondary-600 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
                 <div>
                   <p class="font-semibold text-sm">Business Hours</p>
-                  <p class="text-sm text-slate-600" data-cfg="businessHours.weekdays">Monday – Saturday: 6:00 AM – 11:00 PM</p>
-                  <p class="text-sm text-slate-600" data-cfg="businessHours.sunday">Sunday: 7:00 AM – 10:00 PM</p>
+                  <p class="text-sm text-slate-600" data-cfg="businessHours.monFri">Monday – Friday: 5:00 AM – 10:00 PM</p>
+                  <p class="text-sm text-slate-600" data-cfg="businessHours.satSun">Saturday, Sunday: 6:00 AM – 10:00 PM</p>
                   <p class="text-sm text-secondary-600 font-medium mt-1" data-cfg="businessHours.note">24×7 Emergency &amp; Airport Transfer Service Available</p>
                 </div>
               </div>
@@ -231,6 +246,7 @@
           <li><a href="index.html" class="hover:text-secondary transition-colors">Home</a></li>
           <li><a href="about.html" class="hover:text-secondary transition-colors">About Us</a></li>
           <li><a href="fleet.html" class="hover:text-secondary transition-colors">Our Fleet</a></li>
+          <li><a href="gallery.html" class="hover:text-secondary transition-colors">Gallery</a></li>
           <li><a href="index.html#partner" class="hover:text-secondary transition-colors">Partner With Us</a></li>
           <li><a href="index.html#testimonials" class="hover:text-secondary transition-colors">Testimonials</a></li>
           <li><a href="index.html#faq" class="hover:text-secondary transition-colors">FAQ</a></li>

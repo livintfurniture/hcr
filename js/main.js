@@ -155,6 +155,129 @@
   /* ------------------------------------------------------------------
    * 3b. Fleet filter tabs (All / Sedan / SUV / Premium SUV / Group Travel)
    * ------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------
+   * Trip search (header) — pick a trip type, land on the fleet page
+   * ------------------------------------------------------------------ */
+  const TRIPS = [
+    ["airport", "Airport Pickup & Drop"],
+    ["railway", "Railway Station Pickup"],
+    ["temple", "Temple / Pilgrimage Trip"],
+    ["outstation", "Outstation Trip"],
+    ["local", "Local City Taxi"],
+    ["oneway", "One Way Taxi"],
+    ["roundtrip", "Round Trip"],
+    ["corporate", "Corporate Cab"],
+    ["hotel", "Hotel Transfer"],
+    ["wedding", "Wedding Car Rental"],
+    ["hourly", "Hourly Rental"],
+  ];
+
+  function initTripSearch() {
+    document.querySelectorAll("[data-trip-search]").forEach((form) => {
+      const select = form.querySelector("[data-trip-select]");
+      if (!select) return;
+      select.add(new Option("Choose your trip", "", true, true));
+      select.options[0].disabled = true;
+      TRIPS.forEach(([value, label]) => select.add(new Option(label, value)));
+      const go = () => {
+        if (!select.value) {
+          select.focus();
+          return;
+        }
+        window.location.href = "fleet.html?trip=" + encodeURIComponent(select.value);
+      };
+      select.addEventListener("change", go);
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        go();
+      });
+    });
+  }
+
+  function initTripBanner() {
+    const banner = document.getElementById("trip-banner");
+    if (!banner) return;
+    const trip = new URLSearchParams(window.location.search).get("trip");
+    const match = TRIPS.find(([value]) => value === trip);
+    if (!match) return;
+    const label = match[1];
+    banner.querySelector("[data-trip-label]").textContent = label;
+    const cfg = window.SITE_CONFIG || {};
+    const link = banner.querySelector("[data-trip-book]");
+    if (link && cfg.whatsappNumber) {
+      link.href =
+        "https://wa.me/" + cfg.whatsappNumber + "?text=" +
+        encodeURIComponent("Hi! I'd like to book a cab for: " + label + ".");
+    }
+    banner.classList.remove("hidden");
+  }
+
+  /* ------------------------------------------------------------------
+   * Gallery lightbox — click a photo to view it larger
+   * ------------------------------------------------------------------ */
+  function initGallery() {
+    const items = Array.from(document.querySelectorAll("[data-gallery-item]"));
+    if (!items.length) return;
+
+    const box = document.createElement("div");
+    box.className = "fixed inset-0 z-[90] hidden items-center justify-center bg-black/90 p-4";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.setAttribute("aria-label", "Photo viewer");
+    box.innerHTML =
+      '<button type="button" data-lb-close aria-label="Close" class="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/15 text-white text-2xl leading-none hover:bg-white/30">&times;</button>' +
+      '<button type="button" data-lb-prev aria-label="Previous photo" class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/15 text-white text-2xl leading-none hover:bg-white/30">&#8249;</button>' +
+      '<button type="button" data-lb-next aria-label="Next photo" class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/15 text-white text-2xl leading-none hover:bg-white/30">&#8250;</button>' +
+      '<figure class="max-w-4xl w-full max-h-full flex flex-col items-center">' +
+      '<img data-lb-img alt="" class="max-h-[75vh] w-auto max-w-full rounded-xl object-contain" />' +
+      '<figcaption class="mt-4 text-center text-white"><p data-lb-title class="font-semibold"></p><p data-lb-caption class="mt-1 text-sm text-slate-300"></p></figcaption>' +
+      "</figure>";
+    document.body.appendChild(box);
+
+    const img = box.querySelector("[data-lb-img]");
+    const title = box.querySelector("[data-lb-title]");
+    const caption = box.querySelector("[data-lb-caption]");
+    let index = 0;
+    let opener = null;
+
+    function show(i) {
+      index = (i + items.length) % items.length;
+      const el = items[index];
+      img.src = el.getAttribute("data-full");
+      img.alt = el.getAttribute("data-caption") || "";
+      title.textContent = el.getAttribute("data-title") || "";
+      caption.textContent = el.getAttribute("data-caption") || "";
+    }
+    function open(i) {
+      opener = document.activeElement;
+      show(i);
+      box.classList.remove("hidden");
+      box.classList.add("flex");
+      document.body.style.overflow = "hidden";
+      box.querySelector("[data-lb-close]").focus();
+    }
+    function close() {
+      box.classList.add("hidden");
+      box.classList.remove("flex");
+      document.body.style.overflow = "";
+      if (opener) opener.focus();
+    }
+
+    items.forEach((el, i) => el.addEventListener("click", () => open(i)));
+    box.querySelector("[data-lb-close]").addEventListener("click", close);
+    box.querySelector("[data-lb-prev]").addEventListener("click", () => show(index - 1));
+    box.querySelector("[data-lb-next]").addEventListener("click", () => show(index + 1));
+    box.addEventListener("click", (e) => {
+      if (e.target === box) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (box.classList.contains("hidden")) return;
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowLeft") show(index - 1);
+      else if (e.key === "ArrowRight") show(index + 1);
+    });
+  }
+
   function initFleetFilter() {
     const buttons = document.querySelectorAll("[data-fleet-filter]");
     const groups = document.querySelectorAll("[data-fleet-group]");
@@ -567,6 +690,9 @@
     initTracking();
     initPageLoader();
     initNavbar();
+    initTripSearch();
+    initTripBanner();
+    initGallery();
     initFleetFilter();
     initMarquee();
 

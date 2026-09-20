@@ -23,7 +23,7 @@ window.SITE_CONFIG = {
   phoneDisplay: "+91 95800 12345",
   phoneRaw: "+919580012345",
   whatsappNumber: "919580012345", // digits only, country code, no + or spaces
-  email: "info@worldstoursandtravels.com",
+  email: "info@hyderabadcabrentals.com",
 
   address: {
     line1: "P.No: 72/P & 73/P, Raghavendra Colony",
@@ -40,8 +40,8 @@ window.SITE_CONFIG = {
   googleMapsDirectionsUrl: "https://www.google.com/maps/search/?api=1&query=P.No%3A%2072%2FP%20%26%2073%2FP%2C%20Raghavendra%20Colony%2C%20Suchitra%2C%20Quthbullapur%2C%20Hyderabad%2C%20Telangana%20500055%2C%20India",
 
   businessHours: {
-    weekdays: "Monday – Saturday: 6:00 AM – 11:00 PM",
-    sunday: "Sunday: 7:00 AM – 10:00 PM",
+    monFri: "Monday – Friday: 5:00 AM – 10:00 PM",
+    satSun: "Saturday, Sunday: 6:00 AM – 10:00 PM",
     note: "24×7 Emergency & Airport Transfer Service Available"
   },
 
@@ -50,7 +50,7 @@ window.SITE_CONFIG = {
   // ---------------------------------------------------------------------
   social: {
     facebook: "https://facebook.com/worldstoursandtravels",
-    instagram: "https://www.instagram.com/worldtoursandtravels1/",
+    instagram: "https://www.instagram.com/hyderabadcabrental/",
     twitter: "https://x.com/WorldTours11",
     youtube: "https://youtube.com/@worldstoursandtravels",
     linkedin: "https://www.linkedin.com/in/world-tours-and-travels-ab6a88374/"

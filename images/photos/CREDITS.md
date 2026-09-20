@@ -34,9 +34,8 @@ the rights to use each one commercially before launch.
 | File | Subject | Notes |
 |---|---|---|
 | hero-main.jpg | Audi R8, dark garage (homepage hero) | Upscaled from a small source (469×832); sharper original recommended |
-| hatchback.jpg | Black VW Golf | UK dealer plate ("STABLE") visible |
+| hatchback.jpg | White Maruti Suzuki Baleno, studio (homepage Hatchback card) | Small source (414×232), not upscaled; looks like a manufacturer/dealer image — confirm usage rights |
 | sedan.jpg | Hyundai Elantra on road | Shared across all four sedan cards |
-| suv.jpg | White Hyundai Venue | Source carried an "AUTOBICS" watermark — cropped out, which suggests a licensed stock image |
 | innova.jpg | Toyota Innova Crysta, studio | — |
 | toyota-etios.jpg | White Toyota Etios, studio (Toyota Etios card only) | Small source (600×399), not upscaled — confirm usage rights |
 | tata-zest.jpg | White Tata Zest, studio (Tata Zest card only) | Small source (663×415), lightly scaled down — confirm usage rights |
@@ -46,4 +45,19 @@ the rights to use each one commercially before launch.
 | maruti-ertiga.jpg | White Maruti Suzuki Ertiga, studio (Ertiga card only) | Small source (547×365), not upscaled — confirm usage rights |
 | hyundai-aura.jpg | White Hyundai Aura, studio (Aura card only) | Padded with white to 3:2 — confirm usage rights |
 | innova-hycross.jpg | White Toyota Innova Hycross, studio (Hycross card only) | Small source (547×365), not upscaled — confirm usage rights |
+| tempo-traveller.jpg | White Force Tempo Traveller (12-seater card + homepage) | Shows a number plate and another operator's roof lettering ("…travels") — replace with your own vehicle photo or blur those before launch |
+| tempo-traveller-16.jpg | White Force Tempo Traveller "Traveller" (16-seater card only) | Small source (582×343), not upscaled; has a plain yellow plate — confirm usage rights |
 | swift-dzire.jpg | Maruti Suzuki Swift Dzire Tour S (Swift Dzire card only) | Looks like a manufacturer press image — confirm you have the right to use it |
+
+---
+
+## 3. Gallery — customer photos
+
+These are photos of real people, supplied by the site owner for the Gallery page. Before launch, confirm you have **permission from the people shown** (and rights to the images) to use them on a public commercial website.
+
+| File | Subject | Notes |
+|---|---|---|
+| gallery-group-hills.jpg | Group at a hillside halt | Burned-in "Happy customers" caption strip cropped off; vehicle plates visible in the background |
+| gallery-group-waterfall.jpg | Group beside a waterfall fountain | Location not identified — caption is generic |
+| gallery-group-temple-steps.jpg | Group on temple steps | Thai-language sign visible; caption assumes Thailand |
+| gallery-petronas-towers.jpg | Selfie at the Petronas Twin Towers, Kuala Lumpur | Shows one identifiable person |

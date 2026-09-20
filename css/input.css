@@ -265,3 +265,86 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Working-hours bar (hero) */
+.hours-bar {
+  background: rgba(6, 10, 28, 0.6);
+  border-block: 1px solid rgba(255, 255, 255, 0.08);
+}
+.hours-bar-text {
+  padding: 0.4rem 0.75rem;
+  text-align: center;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.1rem;
+  color: #fff;
+  white-space: nowrap;
+}
+@media (min-width: 640px) {
+  .hours-bar-text { font-size: 0.8125rem; }
+}
+
+/* Hero side panels (desktop): cards that flank the car */
+.side-card {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.03));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.side-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(34, 197, 94, 0.6);
+}
+.side-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.25rem;
+  border-radius: 9999px;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.14);
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.35);
+}
+.side-num {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  font-size: 1.5rem;
+  color: #22c55e;
+}
+.side-label {
+  margin-top: 0.15rem;
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #e2e8f0;
+}
+.side-text { font-size: 0.625rem; }
+@media (min-width: 1280px) {
+  .side-card { padding: 0.75rem; }
+  .side-icon { width: 2.75rem; height: 2.75rem; margin-bottom: 0.4rem; }
+  .side-num { font-size: clamp(1.75rem, 2.4vw, 2.75rem); }
+  .side-label { font-size: 0.75rem; }
+  .side-text { font-size: 0.875rem; }
+}
+@media (min-width: 1920px) {
+  .side-card { padding: 1rem; }
+  .side-icon { width: 3.25rem; height: 3.25rem; margin-bottom: 0.6rem; }
+  .side-num { font-size: clamp(2.5rem, 2.6vw, 4rem); }
+  .side-label { font-size: clamp(0.8125rem, 0.75vw, 1.125rem); }
+  .side-text { font-size: clamp(1rem, 1.1vw, 1.5rem); }
+}
