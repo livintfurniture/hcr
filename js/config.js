@@ -15,11 +15,7 @@ window.SITE_CONFIG = {
   // Core identity
   // ---------------------------------------------------------------------
   businessName: "HCR Hyderabad Cab Rentals",
-  shortName: "HCR",
-  tagline: "Reliable Cab & Bus Services for Every Journey",
-  logo: "images/logo-hcr.jpg",
-  logoAlt: "HCR Hyderabad Cab Rentals logo",
-  websiteUrl: "https://www.worldstoursandtravels.com",
+  logo: "images/logo-hcr-web.png",
 
   // ---------------------------------------------------------------------
   // Contact details — used for tel:, mailto:, wa.me links & schema
@@ -30,18 +26,18 @@ window.SITE_CONFIG = {
   email: "info@worldstoursandtravels.com",
 
   address: {
-    line1: "Plot No. 12, NH-65 Service Road",
-    line2: "Near RTC Bus Stand",
-    city: "Tirupati",
-    state: "Andhra Pradesh",
-    pincode: "517501",
+    line1: "P.No: 72/P & 73/P, Raghavendra Colony",
+    line2: "Suchitra, Quthbullapur",
+    city: "Hyderabad",
+    state: "Telangana",
+    pincode: "500055",
     country: "India",
-    full: "Plot No. 12, NH-65 Service Road, Near RTC Bus Stand, Tirupati, Andhra Pradesh 517501, India"
+    full: "P.No: 72/P & 73/P, Raghavendra Colony, Suchitra, Quthbullapur, Hyderabad, Telangana 500055, India"
   },
 
   // Google Maps — replace with your own "Embed a map" src URL from Google Maps
-  googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3853.9!2d79.4192!3d13.6288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4d5f0b0b0b0b0b%3A0x0!2sTirupati%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000",
-  googleMapsDirectionsUrl: "https://maps.google.com/?q=Worlds+Tours+and+Travels+Tirupati",
+  googleMapsEmbed: "https://www.google.com/maps?q=P.No%3A%2072%2FP%20%26%2073%2FP%2C%20Raghavendra%20Colony%2C%20Suchitra%2C%20Quthbullapur%2C%20Hyderabad%2C%20Telangana%20500055%2C%20India&output=embed",
+  googleMapsDirectionsUrl: "https://www.google.com/maps/search/?api=1&query=P.No%3A%2072%2FP%20%26%2073%2FP%2C%20Raghavendra%20Colony%2C%20Suchitra%2C%20Quthbullapur%2C%20Hyderabad%2C%20Telangana%20500055%2C%20India",
 
   businessHours: {
     weekdays: "Monday – Saturday: 6:00 AM – 11:00 PM",
@@ -61,31 +57,19 @@ window.SITE_CONFIG = {
   },
 
   // ---------------------------------------------------------------------
-  // Stats shown in the hero section (animated counters)
+  // Analytics & Google Ads — leave blank to disable. Nothing loads until set.
+  //   ga4Id  : Google Analytics 4 measurement ID, e.g. "G-XXXXXXXXXX"
+  //   adsId  : Google Ads account tag,           e.g. "AW-XXXXXXXXXX"
+  //   adsConversions: full conversion "send_to" values from Google Ads,
+  //                   e.g. "AW-XXXXXXXXXX/AbC-D_efG-h12_34-5"
   // ---------------------------------------------------------------------
-  stats: [
-    { value: 5000, suffix: "+", label: "Happy Customers" },
-    { value: 24, prefix: "", suffix: "x7", label: "Service Availability" },
-    { value: 100, suffix: "+", label: "Vehicles in Fleet" },
-    { value: 10, suffix: "+", label: "Years of Experience" }
-  ],
-
-  // ---------------------------------------------------------------------
-  // SEO defaults
-  // ---------------------------------------------------------------------
-  seo: {
-    titleSuffix: " | HCR Hyderabad Cab Rentals",
-    defaultDescription:
-      "HCR Hyderabad Cab Rentals provides reliable cab services, airport transfers, outstation taxi, luxury bus booking, tempo traveller rental, corporate transportation, and 24×7 travel services.",
-    keywords:
-      "Cab Service, Taxi Service, Bus Service, Bus Booking, Travel Agency, Tours and Travels, Airport Taxi, Airport Transfer, Outstation Taxi, Tempo Traveller, Luxury Bus, Corporate Transport, Car Rental, Local Taxi",
-    googleSiteVerification: "PASTE-YOUR-GOOGLE-SITE-VERIFICATION-CODE-HERE",
-    themeColor: "#1E3A8A"
-  },
-
-  // Service areas listed in the "Service Area" section
-  serviceAreas: [
-    "Tirupati", "Chittoor", "Renigunta", "Srikalahasti", "Nellore",
-    "Chennai", "Bangalore", "Hyderabad", "Vijayawada", "Kadapa"
-  ]
+  analytics: {
+    ga4Id: "",
+    adsId: "",
+    adsConversions: {
+      call: "",
+      whatsapp: "",
+      form: ""
+    }
+  }
 };

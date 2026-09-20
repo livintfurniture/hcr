@@ -1,45 +1,49 @@
 # Photo Credits
 
-All photos in this folder are sourced from [Wikimedia Commons](https://commons.wikimedia.org)
-and are freely licensed for reuse (Creative Commons / public domain), but most
-require **attribution** under their specific license. Before launching this
-site commercially, visit each source page below, confirm the exact license,
-and add proper credit (e.g. in a page footer or an on-image caption) as that
-license requires.
+## ⚠️ Action required before going live
+
+Two groups of images are in this folder, with different licensing situations.
+**Both need checking before this site is used commercially.**
+
+---
+
+## 1. Wikimedia Commons photos — attribution required
+
+These are freely licensed (Creative Commons / public domain) but most **require
+attribution** under their specific license. Visit each source page, confirm the
+exact license, and add proper credit (page footer or on-image caption).
 
 | File | Subject | Source |
 |---|---|---|
-| tirupati.jpg | Tirumala Venkateswara Temple | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:A_View_of_Tirumala_Venkateswara_Temple.JPG) |
-| srisailam.jpg | Srisailam Patalganga Ghat | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Srisailam_Patalganga_Ghat.JPG) |
-| hyderabad.jpg | Charminar, Hyderabad | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Charminar-Pride_of_Hyderabad.jpg) |
-| bangalore.jpg | Vidhana Soudha, Bangalore | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Vidhana_Soudha_Bangalore.jpg) |
-| chennai.jpg | Marina Beach, Chennai | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Marina_Beach,_Chennai.jpg) |
-| goa.jpg | Anjuna Beach, Goa | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Anjuna_Beach_Goa_India.JPG) |
-| kerala.jpg | Kerala backwaters houseboat | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Kerala_backwaters,_Vembanad_Lake,_Houseboats,_India.jpg) |
-| ooty.jpg | Tea plantation, Ooty | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Ooty_tea._plantation,_doddabetta_Tamil_nadu,_India.jpg) |
-| mysore.jpg | Mysore Palace | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Mysore_Palace_Front_view.jpg) |
-| hatchback.jpg | Maruti Suzuki Swift | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Suzuki_Swift_front-1.jpg) |
-| sedan.jpg | Honda City | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:0_Honda_City_(7th_generation)_sedan.jpg) |
-| suv.jpg | Mahindra XUV700 (unused — replaced by ertiga.jpg on the "SUV (Ertiga)" card, which had been mismatched with this photo) | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:A_black_Mahindra_XUV700_SUV_in_Ashiana_Brahmananda,_Jamshedpur,_India_(Ank_Kumar,_Infosys_Limited)_02.jpg) |
-| ertiga.jpg | Maruti Suzuki Ertiga, front view (CC BY-SA 4.0, credit: EurovisionNim) | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Suzuki_Ertiga,_MPV_front_view.jpg) |
-| innova.jpg | Toyota Innova | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Toyota_Innova_(first_generation)_(front),_Kajang.jpg) |
-| innova-crysta.jpg | Toyota Innova Crysta | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Toyota_Innova_Crysta_2.4_Z_front_right.jpg) |
-| tempo-traveller.jpg | Force Traveller | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Force_Traveller_Luxury.jpg) |
 | luxury-car.jpg | Mercedes-Benz E-Class | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:2018_Mercedes-Benz_E_300_(W_213)_sedan_(2018-11-02)_01.jpg) |
-| minibus.jpg | BMTC Midi Bus | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:BMTC_Midi_Bus.jpg) |
-| luxury-coach.jpg | KSRTC Garuda Maharaja (Scania) | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:KSRTC_Scania_Maharaja_RP_666.jpg) |
-| volvo.jpg | Volvo bus, Mysore | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Volvo_bus_Mysore.jpg) |
-| sleeper-bus.png | KSRTC Rajahamsa semi-sleeper | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:KSRTC%27S_Rajahamsa_Executive_Class_bus.png) |
-| ac-bus.jpg | KSRTC AC Volvo, Trivandrum | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Trivandrum_AC_Volvo_KSRTC.jpg) |
-| nonac-bus.jpg | DTC non-AC bus | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:DTC_Bus_Green_Non_AC.jpg) |
 | hero-banner.jpg | Ghat road, Yercaud, Salem | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Sixty_feet_bridge-5-ghat_road-yercaud-salem-India.jpg) |
 | hero-highway-aerial.jpg | Aerial view of NH 16 near Regupalem, Andhra Pradesh (CC BY-SA 4.0, credit: iMahesh) | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Aerial_view_of_National_Highway_16_near_Regupalem.jpg) |
-| about-fleet.jpg | Radio taxis, Hyderabad airport | [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:HYD_Radio_taxis.jpg) |
 
-## Attribution reminder
+CC BY-SA licenses generally require, at minimum: title, author name, and a
+license link near the image or on a credits page. A simple approach: add a
+`/photo-credits.html` page and link it from the footer.
 
-Wikimedia Commons licenses (mostly CC BY-SA 3.0/4.0) generally require, at minimum:
-title, author name, and license link near the image or in a credits page.
-A simple approach: add a `/photo-credits.html` page linking each image to its
-source, and link to it from the footer, once you've confirmed each license
-on the pages above.
+---
+
+## 2. Owner-supplied photos — licensing unverified
+
+These replaced the original Wikimedia images and were provided directly by the
+site owner. Their source and licensing are **not documented** — confirm you hold
+the rights to use each one commercially before launch.
+
+| File | Subject | Notes |
+|---|---|---|
+| hero-main.jpg | Audi R8, dark garage (homepage hero) | Upscaled from a small source (469×832); sharper original recommended |
+| hatchback.jpg | Black VW Golf | UK dealer plate ("STABLE") visible |
+| sedan.jpg | Hyundai Elantra on road | Shared across all four sedan cards |
+| suv.jpg | White Hyundai Venue | Source carried an "AUTOBICS" watermark — cropped out, which suggests a licensed stock image |
+| innova.jpg | Toyota Innova Crysta, studio | — |
+| toyota-etios.jpg | White Toyota Etios, studio (Toyota Etios card only) | Small source (600×399), not upscaled — confirm usage rights |
+| tata-zest.jpg | White Tata Zest, studio (Tata Zest card only) | Small source (663×415), lightly scaled down — confirm usage rights |
+| kia-carens.jpg | White Kia Carens, studio (Kia Carens card only) | Looks like a manufacturer/dealer image — confirm usage rights |
+| mahindra-marazzo.jpg | Silver Mahindra Marazzo, studio (Marazzo card only) | Small source (500×500), not upscaled — confirm usage rights |
+| mahindra-xylo.jpg | White Mahindra Xylo, studio (Xylo card only) | Small source (641×336), padded with white to 3:2 — confirm usage rights |
+| maruti-ertiga.jpg | White Maruti Suzuki Ertiga, studio (Ertiga card only) | Small source (547×365), not upscaled — confirm usage rights |
+| hyundai-aura.jpg | White Hyundai Aura, studio (Aura card only) | Padded with white to 3:2 — confirm usage rights |
+| innova-hycross.jpg | White Toyota Innova Hycross, studio (Hycross card only) | Small source (547×365), not upscaled — confirm usage rights |
+| swift-dzire.jpg | Maruti Suzuki Swift Dzire Tour S (Swift Dzire card only) | Looks like a manufacturer press image — confirm you have the right to use it |

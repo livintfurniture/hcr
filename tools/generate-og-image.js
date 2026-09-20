@@ -1,13 +1,14 @@
 /**
  * Generates images/og-cover.png — a branded gradient graphic used for
- * Open Graph / Twitter Card previews. Pure Node (zlib), no image libraries,
- * no stock photography.
+ * Open Graph / Twitter Card previews. Background/texture is drawn with pure
+ * Node (zlib); the real logo is composited on top via sharp.
  *
  * Run with: node tools/generate-og-image.js
  */
 const fs = require("fs");
 const path = require("path");
 const zlib = require("zlib");
+const sharp = require("sharp");
 
 const W = 1200;
 const H = 630;
@@ -122,32 +123,6 @@ function drawRingOutline(cx, cy, r, color, alpha, strokeW) {
 drawRingOutline(960, 320, 220, [34, 197, 94], 0.25, 2);
 drawRingOutline(960, 320, 160, [255, 255, 255], 0.15, 2);
 
-// Large logo monogram badge (rounded square + W polyline), left-center
-const badgeX = 110, badgeY = 195, badgeSize = 240, radius = 54;
-for (let y = 0; y < badgeSize; y++) {
-  for (let x = 0; x < badgeSize; x++) {
-    const cx = badgeSize / 2, cy = badgeSize / 2;
-    const dx = Math.abs(x - cx) - (cx - radius);
-    const dy = Math.abs(y - cy) - (cy - radius);
-    const inside = dx <= 0 || dy <= 0 ? true : dx * dx + dy * dy <= radius * radius;
-    if (inside) {
-      const idx = ((badgeY + y) * W + (badgeX + x)) * 4;
-      pixels[idx] = 255;
-      pixels[idx + 1] = 255;
-      pixels[idx + 2] = 255;
-      pixels[idx + 3] = 255;
-    }
-  }
-}
-const wPoints = [
-  [badgeX + 46, badgeY + 82],
-  [badgeX + 78, badgeY + 168],
-  [badgeX + 108, badgeY + 118],
-  [badgeX + 138, badgeY + 168],
-  [badgeX + 170, badgeY + 82]
-];
-drawThickPolyline(pixels, W, H, wPoints, 20, [34, 197, 94], 1);
-
 // Route line + pins motif (bottom area, echoing hero illustration)
 const route = [
   [420, 560], [520, 500], [620, 520], [720, 440], [860, 400]
@@ -186,5 +161,21 @@ function encodePNG(pixels, width, height) {
 }
 
 const outPath = path.join(__dirname, "..", "images", "og-cover.png");
-fs.writeFileSync(outPath, encodePNG(pixels, W, H));
-console.log(`Generated ${outPath} (${W}x${H})`);
+const logoPath = path.join(__dirname, "..", "images", "logo-hcr.png");
+
+async function main() {
+  const background = encodePNG(pixels, W, H);
+  const logo = await sharp(logoPath)
+    .resize({ width: 520, fit: "inside" })
+    .toBuffer();
+  const logoMeta = await sharp(logo).metadata();
+  const logoX = 90;
+  const logoY = Math.round((H - logoMeta.height) / 2) - 20;
+
+  await sharp(background)
+    .composite([{ input: logo, left: logoX, top: logoY }])
+    .png()
+    .toFile(outPath);
+  console.log(`Generated ${outPath} (${W}x${H})`);
+}
+main();

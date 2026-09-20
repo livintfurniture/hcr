@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.worldstoursandtravels.com/sitemap.xml
+Sitemap: https://www.worldtoursandtravels.in/sitemap.xml

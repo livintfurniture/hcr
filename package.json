@@ -1,7 +1,7 @@
 {
   "name": "worlds-tours-and-travels",
   "version": "1.0.0",
-  "description": "Production website for Worlds Tours and Travels — Cab, Bus & Tour services.",
+  "description": "Production website for Worlds Tours and Travels — Cab & Tour services.",
   "private": true,
   "scripts": {
     "build:css": "tailwindcss -i ./css/input.css -o ./css/tailwind.css --minify",

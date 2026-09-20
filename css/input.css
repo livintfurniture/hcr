@@ -94,9 +94,6 @@
   .glass {
     @apply bg-white/10 backdrop-blur-md border border-white/20;
   }
-  .glass-light {
-    @apply bg-white/70 backdrop-blur-md border border-white/40;
-  }
 
   /* Cards */
   .card {
@@ -170,10 +167,69 @@
   .animate-delay-200 { animation-delay: 0.2s; }
   .animate-delay-300 { animation-delay: 0.3s; }
   .animate-delay-400 { animation-delay: 0.4s; }
-  .animate-delay-500 { animation-delay: 0.5s; }
 }
 
-/* Mobile off-canvas menu */
+/* Auto-scrolling horizontal marquee (cloned + looped by initMarquee in main.js) */
+.marquee {
+  overflow: hidden;
+  padding-block: 1rem;
+  margin-bottom: -1rem;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll var(--marquee-duration, 60s) linear infinite;
+}
+.marquee-track > * {
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee-scroll {
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee { overflow-x: auto; }
+  .marquee-track { animation: none; }
+}
+
+/* Core-values orbit: arms spin around the logo, cards counter-rotate to stay upright */
+.orbit-spin {
+  animation: orbit-spin 48s linear infinite;
+}
+.orbit-content {
+  transform: rotate(calc(var(--a, 0deg) * -1));
+  animation: orbit-counter 48s linear infinite;
+}
+.orbit:hover .orbit-spin,
+.orbit:hover .orbit-content {
+  animation-play-state: paused;
+}
+@keyframes orbit-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes orbit-counter {
+  from { transform: rotate(calc(var(--a, 0deg) * -1)); }
+  to { transform: rotate(calc(var(--a, 0deg) * -1 - 360deg)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbit-spin, .orbit-content { animation: none; }
+}
+
+/* Mobile off-canvas menu.
+   The header uses backdrop-filter, which makes it the containing block for this
+   position:fixed panel — so a bottom:0 offset collapses the panel to the header's
+   height. An explicit viewport-based height works whether or not the blur is on. */
+#mobile-menu.mobile-menu {
+  bottom: auto;
+  height: calc(100vh - 4rem);
+  height: calc(100dvh - 4rem);
+}
 .mobile-menu {
   transform: translateX(100%);
   opacity: 0;

@@ -153,7 +153,7 @@
   }
 
   /* ------------------------------------------------------------------
-   * 3b. Fleet filter tabs (All / Cars / Buses)
+   * 3b. Fleet filter tabs (All / Sedan / SUV / Premium SUV / Group Travel)
    * ------------------------------------------------------------------ */
   function initFleetFilter() {
     const buttons = document.querySelectorAll("[data-fleet-filter]");
@@ -485,6 +485,7 @@
         const heading = form.getAttribute("data-whatsapp-form") || "New Enquiry";
         const message = buildWhatsAppMessage(form, heading);
         window.open(whatsappUrl(message), "_blank", "noopener");
+        document.dispatchEvent(new CustomEvent("hcr:form-submit"));
         if (successBox) {
           successBox.classList.remove("hidden");
           setTimeout(() => successBox.classList.add("hidden"), 6000);
@@ -504,13 +505,71 @@
   }
 
   /* ------------------------------------------------------------------
+   * Marquee: continuous horizontal auto-scroll (items are cloned for a seamless loop)
+   * ------------------------------------------------------------------ */
+  function initMarquee() {
+    document.querySelectorAll("[data-marquee]").forEach((root) => {
+      const items = Array.from(root.children);
+      if (!items.length) return;
+      const track = document.createElement("div");
+      track.className = "marquee-track";
+      items.forEach((el) => track.appendChild(el));
+      items.forEach((el) => {
+        const clone = el.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        clone.querySelectorAll("a, button").forEach((n) => n.setAttribute("tabindex", "-1"));
+        track.appendChild(clone);
+      });
+      track.style.setProperty("--marquee-duration", items.length * 6 + "s");
+      root.appendChild(track);
+    });
+  }
+
+  /* ------------------------------------------------------------------
+   * Analytics + Google Ads conversion tracking (inert until IDs are set in config.js)
+   * ------------------------------------------------------------------ */
+  function initTracking() {
+    const cfg = CFG.analytics || {};
+    const ids = [cfg.ga4Id, cfg.adsId].filter(Boolean);
+    if (!ids.length) return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    const tag = document.createElement("script");
+    tag.async = true;
+    tag.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(ids[0]);
+    document.head.appendChild(tag);
+    window.gtag("js", new Date());
+    ids.forEach((id) => window.gtag("config", id));
+
+    const conversions = cfg.adsConversions || {};
+    function track(type) {
+      window.gtag("event", "generate_lead", { method: type });
+      if (conversions[type]) window.gtag("event", "conversion", { send_to: conversions[type] });
+    }
+
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest && e.target.closest("a[href]");
+      if (!link) return;
+      const href = link.getAttribute("href") || "";
+      if (href.indexOf("tel:") === 0) track("call");
+      else if (href.indexOf("wa.me") !== -1) track("whatsapp");
+    });
+    document.addEventListener("hcr:form-submit", () => track("form"));
+  }
+
+  /* ------------------------------------------------------------------
    * Init
    * ------------------------------------------------------------------ */
   document.addEventListener("DOMContentLoaded", () => {
     applyConfig();
+
+    initTracking();
     initPageLoader();
     initNavbar();
     initFleetFilter();
+    initMarquee();
+
     initScrollReveal();
     initCounters();
     initTestimonialSlider();

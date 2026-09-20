@@ -1,7 +1,7 @@
 {
   "name": "HCR Hyderabad Cab Rentals",
   "short_name": "HCR",
-  "description": "Reliable cab services, bus bookings, tour packages, flight tickets, and visa assistance — available 24x7.",
+  "description": "Reliable cab services — available 24x7.",
   "start_url": "/index.html",
   "scope": "/",
   "display": "standalone",

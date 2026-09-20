@@ -44,7 +44,7 @@ module.exports = {
         glow: "0 0 0 1px rgba(34, 197, 94, 0.3), 0 8px 24px -4px rgba(34, 197, 94, 0.3)"
       },
       backgroundImage: {
-        "hero-gradient": "linear-gradient(180deg, rgba(15,23,55,0.2) 0%, rgba(17,26,58,0.55) 45%, rgba(12,19,48,0.88) 100%)",
+        "hero-gradient": "linear-gradient(180deg, rgba(10,16,40,0.32) 0%, rgba(13,20,48,0.04) 48%, rgba(10,16,40,0.72) 100%)",
         "cta-gradient": "linear-gradient(135deg, #1E3A8A 0%, #1D4ED8 55%, #15803D 100%)",
         "hero-pattern": "radial-gradient(circle at 15% 20%, rgba(34,197,94,0.25) 0%, transparent 40%), radial-gradient(circle at 85% 80%, rgba(96,165,250,0.3) 0%, transparent 45%)",
         "hero-base": "radial-gradient(circle at 15% 20%, rgba(34,197,94,0.35) 0%, transparent 40%), radial-gradient(circle at 85% 80%, rgba(96,165,250,0.35) 0%, transparent 45%), linear-gradient(135deg, #172554 0%, #1E3A8A 55%, #1E40AF 100%)"
